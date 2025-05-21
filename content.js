@@ -2,24 +2,15 @@
 setTimeout(() => {
   // Helper to get or prompt for user info
   function getUserInfo() {
-    let info = localStorage.getItem("xpscUserInfo");
-    if (info) {
-      return JSON.parse(info);
-    }
-    // Prompt user for info
-    const name = prompt("Enter your name:", "");
-    const email = prompt("Enter your email:", "");
-    const vjudge = prompt("Enter your vjudge profile link:", "");
-    const zone = prompt(
-      "Enter your Problem Solvers Zone (e.g., Newbie Problem Solvers Zone):",
-      "Newbie Problem Solvers Zone"
-    );
-    const targetReason = prompt(
-      "Target reason (default: Yes Target Fullfill):",
-      "Yes Target Fullfill"
-    );
-    const na = prompt("N/A field (default: N/A):", "N/A");
-    const data = { name, email, vjudge, zone, targetReason, na };
+    // Hardcoded user info
+    const data = {
+      name: "Al kayes",
+      email: "alkayesrifat47@gmail.com",
+      vjudge: "https://vjudge.net/user/alkayesrifat",
+      zone: "Newbie Problem Solvers Zone",
+      targetReason: "Yes Target Fullfill",
+      na: "N/A",
+    };
     localStorage.setItem("xpscUserInfo", JSON.stringify(data));
     return data;
   }
